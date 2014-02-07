@@ -20,6 +20,7 @@
 # definition file).
 #
 
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/mint/include
 TARGET_OTA_ASSERT_DEVICE := mint
 
 # Architecture
@@ -117,7 +118,6 @@ WITH_DEXPREOPT=true
 BOARD_RIL_CLASS := ../../../device/samsung/mint/ril/
 
 # Audio
-# BOARD_USES_TINYALSA_AUDIO := true //implement open source later
 BOARD_USE_SAMSUNG_SEPARATEDSTREAM := true
 BOARD_USES_LIBMEDIA_WITH_AUDIOPARAMETER := true
 COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB

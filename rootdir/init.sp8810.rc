@@ -28,9 +28,6 @@ on init
     symlink /efs /factory
     symlink /dev/block/mmcblk0p11 /dev/block/param
 
-    mkdir /dev/pipe 0755 system system
-    pipe 666 /dev/pipe/mmi.audio.ctrl
-
 on fs
 
     mkdir /productinfo 0774 system system
@@ -53,8 +50,6 @@ on post-fs-data
     # we will remap this as /storage/sdcard0 with the sdcard fuse tool
     mkdir /data/media 0770 media_rw media_rw
     chown media_rw media_rw /data/media
-
-
 
     # Set indication (checked by vold) that we have finished this action
     setprop vold.post_fs_data_done 1
@@ -215,11 +210,11 @@ on boot
     chown system system /sys/class/sec/switch/otg_test
     chown system radio /sys/class/sec/switch/adc
 
-     # Permissions for SVC LED
-	chown system system /sys/class/sec/led/led_pattern
-	chown system system /sys/class/sec/led/led_blink
-	chown system system /sys/class/sec/led/led_br_lev
-	chown system system /sys/class/sec/led/led_lowpower
+    # Permissions for SVC LED
+    chown system system /sys/class/sec/led/led_pattern
+    chown system system /sys/class/sec/led/led_blink
+    chown system system /sys/class/sec/led/led_br_lev
+    chown system system /sys/class/sec/led/led_lowpower
 
     # Voice Soulution
     copy /system/etc/DiamondVoice.txt /data/DiamondVoice.txt

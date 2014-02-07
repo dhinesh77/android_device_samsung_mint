@@ -41,10 +41,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/charge:root/bin/charge \
     $(LOCAL_PATH)/rootdir/bin/modem_control:root/bin/modem_control \
     $(LOCAL_PATH)/rootdir/bin/poweroff_alarm:root/bin/poweroff_alarm \
-    $(LOCAL_PATH)/rootdir/bin/vcharged:root/bin/vcharged \
+    $(LOCAL_PATH)/rootdir/bin/vcharged:root/bin/vcharged
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab \
+    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab
 
 # Recovery
 #PRODUCT_COPY_FILES += \
@@ -56,7 +56,8 @@ PRODUCT_COPY_FILES += \
 
 # Keylayout
 PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/keylayout/sprd-keypad.kl:system/usr/keylayout/sprd-keypad.kl
+     $(LOCAL_PATH)/keylayout/sprd-keypad.kl:system/usr/keylayout/sprd-keypad.kl \
+     $(LOCAL_PATH)/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -101,13 +102,18 @@ PRODUCT_PROPERTY_OVERRIDES := \
 	persist.msms.phone_count=1 \
 	persist.sys.sprd.modemreset=1
 
-# Sensors
+# HW
 PRODUCT_PACKAGES += \
-    lights.sc8810
+    lights.$(TARGET_PLATFORM)
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
+
+# Enable repeatable keys in cwm
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.cwm.enable_key_repeat=true \
+    ro.cwm.repeatable_keys=114,115
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -154,3 +160,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_AAPT_CONFIG := normal ldpi mdpi nodpi
 PRODUCT_AAPT_PREF_CONFIG := ldpi
 $(call inherit-product, device/ldpi-common/ldpi.mk)
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 320
+TARGET_SCREEN_WIDTH  := 240
