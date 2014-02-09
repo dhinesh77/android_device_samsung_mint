@@ -76,14 +76,15 @@ BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/dwc_otg.0/gadget/lun0/file"
 
 # Graphics
-USE_OPENGL_RENDERER := true
+USE_OPENGL_RENDERER := false
+TARGET_DISABLE_TRIPLE_BUFFERING := true
 BOARD_EGL_CFG := device/samsung/mint/egl/egl.cfg
-BOARD_EGL_NEEDS_LEGACY_FB := true
+#BOARD_EGL_NEEDS_LEGACY_FB := true
 
 # Hwcomposer
-USE_SPRD_HWCOMPOSER :=true
-USE_GPU_PROCESS_VIDEO :=true
-USE_RGB_VIDEO_LAYER :=true
+#USE_SPRD_HWCOMPOSER :=true
+#USE_GPU_PROCESS_VIDEO :=true
+#USE_RGB_VIDEO_LAYER :=true
 
 # Camera
 # USE_CAMERA_STUB := true

@@ -109,15 +109,15 @@ etc/audio_VR/Tx_ControlParams_VR_WIRED_HEADPHONE_WIDEBAND.txt
 etc/audio_VR/Tx_ControlParams_VR_WIRED_HEADSET_WIDEBAND.txt
 
 # OMX
-etc/pvplayer.cfg
-lib/libomx_avcdec_sharedlibrary.so
-lib/libomx_m4vdec_sharedlibrary.so
-lib/libomx_m4venc_sharedlibrary.so
-lib/libomx_sharedlibrary.so
-lib/libopencore_common.so
-lib/libstagefrighthw.so
-lib/libstagefright_soft_h264dec_sprd.so
-lib/libstagefright_soft_mpeg4dec_sprd.so
+#etc/pvplayer.cfg
+#lib/libomx_avcdec_sharedlibrary.so
+#lib/libomx_m4vdec_sharedlibrary.so
+#lib/libomx_m4venc_sharedlibrary.so
+#lib/libomx_sharedlibrary.so
+#lib/libopencore_common.so
+#lib/libstagefrighthw.so
+#lib/libstagefright_soft_h264dec_sprd.so
+#lib/libstagefright_soft_mpeg4dec_sprd.so
 
 # System files
 bin/ext_data.sh

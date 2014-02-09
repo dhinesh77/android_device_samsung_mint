@@ -108,18 +108,21 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # HW
 PRODUCT_PACKAGES += \
     lights.$(TARGET_PLATFORM) \
-    gralloc.$(TARGET_PLATFORM) \
     hwcomposer.$(TARGET_PLATFORM)
+
+#   gralloc.$(TARGET_PLATFORM) \
+
 
 # Mali
 PRODUCT_PACKAGES += \
-    libUMP  \
-    libEGL_mali.so \
-    libGLESv1_CM_mali.so \
-    libGLESv2_mali.so \
-    libMali.so \
     ump.ko \
     mali.ko
+
+#    libUMP  \
+#    libEGL_mali.so \
+#    libGLESv1_CM_mali.so \
+#    libGLESv2_mali.so \
+#    libMali.so \
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -146,8 +149,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+    
+#packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
