@@ -80,6 +80,11 @@ USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/samsung/mint/egl/egl.cfg
 BOARD_EGL_NEEDS_LEGACY_FB := true
 
+# Hwcomposer
+USE_SPRD_HWCOMPOSER :=true
+USE_GPU_PROCESS_VIDEO :=true
+USE_RGB_VIDEO_LAYER :=true
+
 # Camera
 # USE_CAMERA_STUB := true
 

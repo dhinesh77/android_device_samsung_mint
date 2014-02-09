@@ -76,6 +76,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.supplicant_scan_interval=150 \
     ro.telephony.ril_class=SamsungBCMRIL
 
+PRODUCT_PACKAGES += \
+    libnetcmdiface
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -104,7 +107,19 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 # HW
 PRODUCT_PACKAGES += \
-    lights.$(TARGET_PLATFORM)
+    lights.$(TARGET_PLATFORM) \
+    gralloc.$(TARGET_PLATFORM) \
+    hwcomposer.$(TARGET_PLATFORM)
+
+# Mali
+PRODUCT_PACKAGES += \
+    libUMP  \
+    libEGL_mali.so \
+    libGLESv1_CM_mali.so \
+    libGLESv2_mali.so \
+    libMali.so \
+    ump.ko \
+    mali.ko
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
