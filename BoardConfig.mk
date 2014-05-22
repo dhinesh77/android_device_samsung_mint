@@ -30,8 +30,9 @@ TARGET_ARCH_VARIANT_CPU := cortex-a5
 TARGET_CPU_VARIANT := cortex-a5
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-ARCH_ARM_HAVE_TLS_REGISTER := true
-#TARGET_CORTEX_CACHE_LINE_32 := true
+
+# Dalvik startup with low memory footprint
+TARGET_ARCH_LOWMEM := true
 
 # Board
 TARGET_BOOTLOADER_BOARD_NAME := mint
@@ -64,11 +65,8 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_LDPI_RECOVERY := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_USE_CUSTOM_RECOVERY_FONT := "<font_7x16.h>"
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/mint/recovery/recovery_keys.c
-TARGET_RECOVERY_INITRC := device/samsung/mint/recovery/recovery.rc
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/mint/recovery/graphics.c
 BOARD_HAS_NO_MISC_PARTITION := true
-TARGET_RECOVERY_FSTAB := device/samsung/mint/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/mint/rootdir/fstab.sp8810
 BOARD_SUPPRESS_EMMC_WIPE := true
 
 # UMS
@@ -78,7 +76,10 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/dwc_otg.0/gadget/lun0/
 # Graphics
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/samsung/mint/egl/egl.cfg
-BOARD_EGL_NEEDS_LEGACY_FB := true
+BOARD_EGL_NEEDS_FNW := true
+BOARD_EGL_WORKAROUND_BUG_10194508 := true
+TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Hwcomposer
 USE_SPRD_HWCOMPOSER :=true
@@ -86,7 +87,7 @@ USE_GPU_PROCESS_VIDEO :=true
 USE_RGB_VIDEO_LAYER :=true
 
 # Camera
-# USE_CAMERA_STUB := true
+USE_CAMERA_STUB := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -119,12 +120,16 @@ BOARD_NO_APSME_ATTR := true
 # ODEX
 WITH_DEXPREOPT=true
 
+# Boot animation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
+TARGET_BOOTANIMATION_USE_RGB565 := true
+
 # RIL
-BOARD_RIL_CLASS := ../../../device/samsung/mint/ril/
+#BOARD_RIL_CLASS := ../../../device/samsung/mint/ril/
 
 # Audio
-BOARD_USE_SAMSUNG_SEPARATEDSTREAM := true
-BOARD_USES_LIBMEDIA_WITH_AUDIOPARAMETER := true
+BOARD_USES_GENERIC_AUDIO := false
 COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB
 
 # Charger

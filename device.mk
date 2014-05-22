@@ -43,9 +43,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/poweroff_alarm:root/bin/poweroff_alarm \
     $(LOCAL_PATH)/rootdir/bin/vcharged:root/bin/vcharged
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vold.fstab:system/etc/vold.fstab
-
 # Recovery
 #PRODUCT_COPY_FILES += \
 #    $(LOCAL_PATH)/rootdir/init.recovery.sp8810.rc:root/init.recovery.sp8810.rc
@@ -100,10 +97,10 @@ PRODUCT_COPY_FILES += \
 
 # Device props
 PRODUCT_PROPERTY_OVERRIDES := \
-	keyguard.no_require_sim=true \
-	ro.com.android.dataroaming=false \
-	persist.msms.phone_count=1 \
-	persist.sys.sprd.modemreset=1
+    keyguard.no_require_sim=true \
+    ro.com.android.dataroaming=false \
+    persist.msms.phone_count=1 \
+    persist.sys.sprd.modemreset=1
 
 # HW
 PRODUCT_PACKAGES += \
@@ -123,7 +120,7 @@ PRODUCT_PACKAGES += \
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+    persist.sys.usb.config=mtp
 
 # Enable repeatable keys in cwm
 PRODUCT_PROPERTY_OVERRIDES += \
