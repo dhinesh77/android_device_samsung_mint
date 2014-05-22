@@ -54,15 +54,15 @@ bin/ss_daemon
 lib/hw/sensors.sc8810.so
 
 # Display
-#lib/hw/gralloc.sc8810.so
-#lib/hw/hwcomposer.sc8810.so
+lib/hw/gralloc.sc8810.so
+lib/hw/hwcomposer.sc8810.so
 
 # Mali-400
-#lib/egl/libEGL_mali.so
-#lib/egl/libGLESv2_mali.so
-#lib/egl/libGLESv1_CM_mali.so
-#lib/libMali.so
-#lib/libUMP.so
+lib/egl/libEGL_mali.so
+lib/egl/libGLESv2_mali.so
+lib/egl/libGLESv1_CM_mali.so
+lib/libMali.so
+lib/libUMP.so
 
 # Audio
 etc/Volume.db
